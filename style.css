@@ -1,0 +1,68 @@
+/* Set the background color, center text, and set the default font for the page */
+body {
+    background-color: hotpink;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Style the profile card: white background, rounded corners, padding, centered, and shadow */
+.profile-card {
+    background: #ffffff;
+    color: #222;
+    border: 2px solid #ffffff;
+    border-radius: 16px;
+    padding: 32px;
+    max-width: 500px;
+    margin: 60px auto;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.10);
+    text-align: center;
+}
+
+/* Remove bullet points and add spacing to the list inside profile-card */
+.profile-card ul {
+    list-style: none;
+    padding: 0;
+    margin-top: 20px;
+}
+
+.profile-card ul li {
+    margin-bottom: 12px;
+}
+
+/* Resize the profile image to fit nicely inside the card */
+.profile-card img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    
+    margin-bottom: 10px;
+    margin-top: 10px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Set the font for all h1 and h2 headings */
+h1, h2 {
+    font-family: Helvetica, Arial, sans-serif;
+}
+
+/* Style the main heading: large size, top margin, wolf grey color */
+h1 {
+    font-size: 3rem;
+    margin-top: 2rem;
+    color: #4b4b4b; /* wolf grey */
+}
+
+/* Style the subheading: medium size, top margin, wolf grey color */
+h2 {
+    font-size: 2rem;
+    margin-top: 1rem;
+    color: #4b4b4b; /* wolf grey */
+}
+
+/* Style paragraphs: set font size and line spacing */
+p {
+    font-size: 18px;
+    line-height: 25.6px;
+}
