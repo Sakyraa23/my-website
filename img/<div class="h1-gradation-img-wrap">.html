@@ -1,0 +1,47 @@
+<div class="h1-gradation-img-wrap">
+  <img src="img/Screenshot_31-5-2025_194229_bookish-acorn-v65pp7xrvrvpcppvg.github.dev (1).jpeg" alt="Hero" class="h1-gradation-img">
+  <div class="h1-gradation-overlay">
+    <h1>Your Heading Here</h1>
+  </div>
+</div>
+
+<style>
+.h1-gradation-img-wrap {
+  position: relative;
+  width: 100%;
+  max-width: 700px; /* Adjust as needed */
+  margin: 0 auto;
+}
+
+.h1-gradation-img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 0;
+}
+
+.h1-gradation-overlay {
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(
+    to right,
+    rgba(254,216,193,0.85) 0%,
+    rgba(254,216,193,0.0) 60%,
+    rgba(255,255,255,0.0) 100%
+  );
+  pointer-events: none;
+}
+
+.h1-gradation-overlay h1 {
+  color: #222;
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin: 0;
+  background: transparent;
+  text-shadow: 0 2px 8px rgba(255,255,255,0.7);
+}
+</style>

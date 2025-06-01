@@ -1,24 +1,370 @@
-<link rel="stylesheet" href="style.css">
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Sakyra's Website</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <title>Turn Passion Into Progress</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    .hero {
+      position: relative;
+      color: #fff;
+      padding: 80px 20px 120px 20px;
+      text-align: left;
+    }
+
+    .hero-img-full {
+      position: relative;
+      width: 100%;
+      max-width: 900px;
+      margin: 40px auto;
+      border-radius: 24px;
+      overflow: hidden;
+      background: #fed8c1;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+    .impact-card {
+      background: #fffbe6;
+      padding: 24px;
+      border-radius: 8px;
+      width: 250px;
+    }
+    .hero-img-full-img {
+      width: 100%;
+      display: block;
+      object-fit: cover;
+      border-radius: 24px;
+      margin: 0 auto;
+      max-width: 100%;
+      height: auto;
+    }
+
+    .hero-overlay-content {
+      position: absolute;
+      top: 0; left: 0; width: 100%; height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background: rgba(255,255,255,0.15);
+      text-align: center;
+      pointer-events: none;
+    }
+
+    .hero-overlay-content h1,
+    .hero-overlay-content .hero-btn {
+      pointer-events: auto;
+    }
+
+    .hero-overlay-content h1 {
+      color: #222;
+      font-size: 2rem;
+      font-weight: bold;
+      margin-bottom: 18px;
+      text-shadow: 0 2px 8px #fff;
+      text-align: center;
+      margin: 18px 0 10px 0;
+    }
+
+    .hero-overlay-content p {
+      margin: 0 0 24px 0;
+      color: #333;
+      font-size: 1.3rem;
+      font-weight: 500;
+    }
+
+    .hero-overlay-content .hero-btn {
+      display: inline-block;
+      background: #2e9df7;
+      color: #fff;
+      padding: 12px 28px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 1.1rem;
+      margin-bottom: 12px;
+      box-shadow: 0 2px 8px rgba(46,157,247,0.12);
+      transition: background 0.2s;
+    }
+    .hero-overlay-content .hero-btn:hover {
+      background: #1c7dc2;
+    }
+
+    .impact-stories {
+      background: #ffc700;
+      padding: 48px 20px;
+      text-align: center;
+    }
+
+    .impact-cards {
+      display: flex;
+      justify-content: center;
+      gap: 24px;
+      margin-top: 24px;
+    }
+
+    .impact-card {
+      background: #fffbe6;
+      padding: 24px;
+      border-radius: 8px;
+      width: 250px;
+    }
+
+    .in-action {
+      background: #1fa463;
+      padding: 48px 20px;
+      text-align: center;
+      color: #fff;
+    }
+
+    .action-cards {
+      display: flex;
+      justify-content: center;
+      gap: 24px;
+      margin-top: 24px;
+    }
+
+    .action-card {
+      background: #fff;
+      color: #222;
+      padding: 24px;
+      border-radius: 8px;
+      width: 250px;
+    }
+
+    .action-card img {
+      width: 100%;
+      border-radius: 8px;
+    }
+
+    .action-btn {
+      display: inline-block;
+      background: #2e9df7;
+      color: #fff;
+      padding: 10px 20px;
+      border-radius: 6px;
+      text-decoration: none;
+      margin-top: 12px;
+    }
+
+    .get-involved {
+      background: #ff9900;
+      padding: 48px 20px;
+      text-align: center;
+    }
+
+    .involved-cards {
+      display: flex;
+      justify-content: center;
+      gap: 24px;
+      margin-top: 24px;
+    }
+
+    .involved-card {
+      background: #fffbe6;
+      padding: 24px;
+      border-radius: 8px;
+      width: 200px;
+    }
+
+    .involved-btn {
+      display: inline-block;
+      background: #2e9df7;
+      color: #fff;
+      padding: 10px 20px;
+      border-radius: 6px;
+      text-decoration: none;
+      margin-top: 12px;
+    }
+
+    .donate {
+      background: #ff6f61;
+      padding: 48px 20px;
+      text-align: center;
+      color: #fff;
+    }
+
+    @media (max-width: 900px) {
+      .impact-cards, .action-cards, .involved-cards {
+        flex-direction: column;
+        align-items: center;
+      }
+      .hero-content {
+        max-width: 100%;
+      }
+    }
+
+    @media (max-width: 1000px) {
+      .hero-img-full {
+        max-width: 100vw;
+      }
+      .hero-img-full-img {
+        height: 260px;
+      }
+      .hero-overlay-content h1 {
+        font-size: 2rem;
+      }
+      .hero-overlay-content {
+        padding: 24px 8px;
+      }
+    }
+
+    .h1-gradation-img-wrap {
+      position: relative;
+      width: 100%;
+      max-width: 100vw;
+      margin: 0 auto 32px auto;
+      overflow: hidden;
+    }
+
+    .h1-gradation-img {
+      display: block;
+      width: 100%;
+      height: 100px;      /* Smaller height */
+      object-fit: cover;
+      border-radius: 0;
+    }
+
+    .h1-gradation-overlay {
+      position: absolute;
+      top: 0; left: 0; width: 100%; height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(
+        to right,
+        rgba(254,216,193,0.85) 0%,
+        rgba(254,216,193,0.0) 60%,
+        rgba(255,255,255,0.0) 100%
+      );
+      pointer-events: none;
+      text-align: center;
+    }
+
+    .h1-gradation-overlay h1 {
+      color: #222;
+      font-size: 2.5rem;
+      font-weight: bold;
+      margin: 0 0 24px 0;
+      background: transparent;
+      text-shadow: 0 2px 8px rgba(255,255,255,0.7);
+      pointer-events: auto;
+    }
+
+    .h1-gradation-overlay .hero-btn {
+      display: inline-block;
+      background: #2e9df7;
+      color: #fff;
+      padding: 14px 32px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 1.2rem;
+      margin-top: 8px;
+      box-shadow: 0 2px 8px rgba(46,157,247,0.12);
+      transition: background 0.2s;
+      pointer-events: auto;
+    }
+    .h1-gradation-overlay .hero-btn:hover {
+      background: #1c7dc2;
+    }
+
+    @media (max-width: 700px) {
+      .h1-gradation-img {
+        height: 100px;    /* Even smaller on mobile */
+      }
+      .h1-gradation-overlay h1 {
+        font-size: 1.3rem;
+      }
+      .h1-gradation-overlay .hero-btn {
+        font-size: 1rem;
+        padding: 10px 20px;
+      }
+    }
+  </style>
 </head>
 <body>
-    <div class="profile-card">
-        <img src="img/iyckx4je.png" alt="Profile picture of Sakyra" style="width:120px; height:120px; border-radius:50%; margin-bottom:16px;">
-        <h1>Sakyra's Profile Card</h1>
-        <h2>Web Developer|Student</h2>
-        <p>Sakyra is a passionate web developer.  
-She loves creating beautiful and functional websites.</p>
-        <h3>My Favorite Websites</h3>
-        <ul>
-            <li><a href="https://github.com/" target="_blank">GitHub</a></li>
-            <li><a href="https://developer.mozilla.org/" target="_blank">MDN Web Docs</a></li>
-            <li><a href="https://www.freecodecamp.org/" target="_blank">freeCodeCamp</a></li>
-            <li><a href="https://www.w3schools.com/" target="_blank">W3Schools</a></li>
-        </ul>
+  <!-- Hero Section -->
+  <div class="hero-img-full">
+    <img src="img/Screenshot_28-5-2025_173537_d11sa1anfvm2xk.cloudfront.net.jpeg" alt="Hero" class="hero-img-full-img">
+    <div class="hero-overlay-content" style="position: static; background: none; box-shadow: none;">
+      <h1>Turn Passion Into Progress.</h1>
+      <a href="#donate" class="hero-btn">Donate Now</a>
     </div>
-    <p>
+  </div>
+
+  <!-- Impact Stories Section -->
+  <section class="impact-stories">
+    <h2>Impact stories</h2>
+    <div class="impact-cards">
+      <div class="impact-card">
+        <p>"I'm incredibly thankful for the support I've received from this organization. Their commitment and kindness have profoundly impacted my life. Additionally, their efforts to provide clean water through charity donations have made a remarkable difference in communities worldwide. Thank you for all that you do."
+
+— Parker G.</p>
+      </div>
+      <div class="impact-card">
+        <p>"The group’s programs empowered me to further help my community. I appreciate their unwavering commitment to promoting a more inclusive world.”
+
+Charlie M.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- In Action Section -->
+  <section class="in-action">
+    <h2>In action</h2>
+    <div class="action-cards">
+      <div class="action-card">
+        <img src="img/Screenshot_31-5-2025_173948_charitywater.dropmark.com.jpeg" alt="Action 1" class="action-img" style="width:100%; height:180px; object-fit:cover; border-radius:8px;">
+        <p>Through collective action and dedication, we are transforming lives and building a better tomorrow. Together, we make a lasting impact.</p>
+        <a href="https://www.charitywater.org/global-water-crisis" class="action-btn" target="_blank" rel="noopener">Learn More</a>
+      </div>
+      <div class="action-card">
+        <img src="img/Screenshot_31-5-2025_173856_charitywater.dropmark.com.jpeg" alt="Action 2" class="action-img">
+        <p>Making a difference together every step of the way. Every effort contributes to a stronger, more compassionate community.</p>
+        <a href="https://www.charitywater.org/take-action" class="action-btn" target="_blank" rel="noopener">Learn More</a>
+        
+      </div>
+    </div>
+  </section>
+
+  <!-- Get Involved Section -->
+  <section class="get-involved">
+    <h2>Get involved</h2>
+    <div class="involved-cards">
+      <div class="involved-card">
+        <h3>Donate</h3>
+        <p>Support our cause.</p>
+        <a href="https://www.charitywater.org/donate" class="involved-btn" target="_blank" rel="noopener"
+        <a href="#donate" class="involved-btn">Donate</a>
+      </div>
+      <div class="involved-card">
+        <h3>Volunteer</h3>
+        <p>Join our team.</p>
+        <a href="https://support.charitywater.org/hc/en-us/articles/2811-How-can-I-volunteer-for-charity-water" class="involved-btn" target="_blank" rel="noopener">Volunteer</a>
+      </div>
+      <div class="involved-card">
+        <h3>Spread the word</h3>
+        <p>Share our mission.</p>
+        <a href="https://www.charitywater.org/fundraise" class="involved-btn" target="_blank" rel="noopener">Share</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Donate Section -->
+  <section class="donate" id="donate">
+    <div style="margin-top: 40px; text-align: center; font-size: 1rem; color: #fff; opacity: 0.7;">
+      <span style="font-weight: bold;">Created by Sakyra Minon</span>
+      <span style="margin-left: 12px; font-size: 0.95em;">sjmini01@louisvill.edu</span>
+    </div>
+</body>
+</html>
